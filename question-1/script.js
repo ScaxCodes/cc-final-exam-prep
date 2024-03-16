@@ -1,16 +1,6 @@
 function getTwoLargestInt(array) {
-  let largest = -Infinity;
-  let secondLargest = -Infinity;
-
-  for (number of array) {
-    if (number >= largest) {
-      secondLargest = largest;
-      largest = number;
-    } else if (number < largest && number > secondLargest)
-      secondLargest = number;
-  }
-
-  return [largest, secondLargest];
+  const sortedArray = array.sort((a, b) => b - a);
+  return sortedArray.slice(0, 2);
 }
 
 console.log(getTwoLargestInt([7, -2, 3, 4, 5, 1, 23, 31, 23]));
