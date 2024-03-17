@@ -39,3 +39,9 @@ Widgets Inc is a production company with several plants around the world. They h
 You are given an array of JavaScript objects, where each object represents a plant and contains the properties "id" and "productionSteps". The "id" property is a unique string identifier for the plant, and "productionSteps" is an array where each element is another object that has a "step" property (a string identifying the step) and a "time" property (a number indicating the time it takes to complete that step).
 
 Your task is to write a JavaScript function that takes this array as input and returns a new JavaScript object. The keys of this object should be the ids of the plants, and the values should be objects where the keys are the steps and the values are the total time it would take to reach that step (including the time for that step itself). The steps should appear in the order they are completed.
+
+## Question 5
+
+ABC corporation has many employees, some of which are managers, others which are employees. Each employee has a manager, and some managers have a manager who oversees them. Each employee knows who manages them but unfortunately the managers have lost their org chart making it difficult for them to remember which employees are below them in the hierarchy.
+
+For this question you’ll be given an array of javascript objects representing employee information. Each employee has a unique “id” property, and every employee that has a manager has a “manager” property that stores the “id” of their manager. Your job is to return a new javascript object that contains the ids of managers as properties, where each property stores an array of the unique ids of all employees beneath that manager in the hierarchy. You may assume any manager referenced will always exist in the array. See the sample inputs for further explanation.
