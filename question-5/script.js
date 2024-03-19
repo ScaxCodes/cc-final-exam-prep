@@ -1,21 +1,26 @@
 function getHierarchy(arrayOfEmployees) {
   const object = {};
-  const trackManagers = [];
 
   arrayOfEmployees.forEach((employee) => {
+    const managerTracker = [];
+    let currentManager = null;
+
     if ("manager" in employee) {
-      trackManagers.push(employee.manager);
-      if (!object[employee.manager]) object[employee.manager] = [];
-      if (trackManagers.includes(employee.id)) {
-        object[employee.id].forEach((employeeBelow) => {
-          object[employee.manager] = [];
-          object[employee.manager].push(employeeBelow);
-        });
+      currentManager = employee.manager;
+      managerTracker.push(currentManager);
+      let currentEmployee = arrayOfEmployees[currentManager - 1];
+      while ("manager" in currentEmployee) {
+        let lastManager = currentManager;
+        currentManager = arrayOfEmployees[lastManager - 1].manager;
+        managerTracker.push(currentManager);
+        currentEmployee = arrayOfEmployees[currentManager - 1];
       }
-      object[employee.manager].push(employee.id);
+      managerTracker.forEach((manager) => {
+        if (!object[manager]) object[manager] = [];
+        object[manager].push(employee.id);
+      });
     }
   });
-
   return object;
 }
 
@@ -45,3 +50,12 @@ console.log(getHierarchy(employees));
 
 employees = [{ id: "1", manager: "3" }, { id: "2", manager: "3" }, { id: "3" }];
 console.log(getHierarchy(employees));
+
+/* 
+SOLUTION PSEUDO CODE
+loop for each entry:
+  if entry has manager, add manager to trackerarray
+  repeat until no manager:
+    if manager has manager, add manager to trackerarray
+  add id to all manager-ids from tracker-array into return-object
+*/
