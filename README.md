@@ -57,3 +57,20 @@ Your task is to write a JavaScript function that takes a text string, an array o
 Each operation will be a function of the form function(text) { /_ ... _/ } and will return a string.
 
 Note: Ranges are inclusive and are based on zero-indexing. If a range is [2, 5], it refers to the part of the string from the 3rd to the 6th character, inclusive.
+
+## Question 7 (No Test Cases)
+
+The TinyTown Library wants to digitize their book inventory. They are looking for a system that allows them to keep track of all the books they have, who borrowed them, and when they are due back.
+
+Your task is to create a JavaScript class named Library. The Library class should have:
+
+- A constructor that takes no arguments and initializes an empty array of books.
+- A books property that is an array of objects, where each object represents a book and
+  has properties for title (string), author (string), borrower (string, initially null).
+- A method addBook(title, author) that creates a new book object and adds it to the books
+  array.
+- A method checkoutBook(title, borrower) that finds the book by title and sets the
+  borrower.
+- A method returnBook(title) that finds the book by title and resets the borrower to null.
+- A method listBorrowedBooks() that returns an array of books that are currently
+  borrowed.
