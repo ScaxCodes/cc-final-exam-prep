@@ -1,18 +1,18 @@
 function ParseProductionSteps(arrayOfPlants) {
   if (arrayOfPlants == undefined) return "Please give a valid input!";
 
-  const object = {};
+  const output = {};
 
   arrayOfPlants.forEach((plant) => {
-    object[plant.id] = {};
-    let sum = 0;
+    output[plant.id] = {};
+    let totalTime = 0;
     plant.productionSteps.forEach((step) => {
-      object[plant.id][step.step] = step.time + sum;
-      sum += step.time;
+      output[plant.id][step.step] = step.time + totalTime;
+      totalTime += step.time;
     });
   });
 
-  return object;
+  return output;
 }
 
 let plants = [
