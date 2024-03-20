@@ -45,3 +45,15 @@ Your task is to write a JavaScript function that takes this array as input and r
 ABC corporation has many employees, some of which are managers, others which are employees. Each employee has a manager, and some managers have a manager who oversees them. Each employee knows who manages them but unfortunately the managers have lost their org chart making it difficult for them to remember which employees are below them in the hierarchy.
 
 For this question you’ll be given an array of javascript objects representing employee information. Each employee has a unique “id” property, and every employee that has a manager has a “manager” property that stores the “id” of their manager. Your job is to return a new javascript object that contains the ids of managers as properties, where each property stores an array of the unique ids of all employees beneath that manager in the hierarchy. You may assume any manager referenced will always exist in the array. See the sample inputs for further explanation.
+
+## Question 6
+
+RapidText Inc. specializes in text processing and analytics. They have developed a new tool that can analyze a large text string and perform a series of operations on it. The operations are provided as an array of functions that each take a string as input and return a modified string as output. The functions are applied in the order they are given in the array.
+
+The problem is that some of these operations are computationally intensive and can take a long time to run, so RapidText wants to be able to apply these operations only to the portions of the text that actually need them.
+
+Your task is to write a JavaScript function that takes a text string, an array of operations (functions), and an array of ranges (each range being an array of two numbers indicating start and end positions in the text). The function should apply each operation to only the text within the specified ranges, and return the modified text.
+
+Each operation will be a function of the form function(text) { /_ ... _/ } and will return a string.
+
+Note: Ranges are inclusive and are based on zero-indexing. If a range is [2, 5], it refers to the part of the string from the 3rd to the 6th character, inclusive.
