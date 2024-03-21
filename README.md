@@ -1,6 +1,8 @@
 # cc-final-exam-prep
 
-Some practise questions for my final exam of the course "CourseCareers - Software Development Fundamentals"
+Some practice questions for my final exam of the course "CourseCareers - Software Development Fundamentals"
+
+# JavaScript
 
 ## Question 1
 
@@ -74,3 +76,13 @@ Your task is to create a JavaScript class named Library. The Library class shoul
 - A method returnBook(title) that finds the book by title and resets the borrower to null.
 - A method listBorrowedBooks() that returns an array of books that are currently
   borrowed.
+
+# Go
+
+## Question 1
+
+In Go, write a function named twoLargest that accepts a slice of integers and returns a slice containing the two largest integers from the input slice. The returned slice should have the larger integer as the first element and the second largest integer as the second element.
+
+The input slice will always contain at least two integers.
+
+If the largest and the second largest number in the input slice are the same, the output slice should contain two copies of this number.
