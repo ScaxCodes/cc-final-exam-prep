@@ -86,3 +86,9 @@ In Go, write a function named twoLargest that accepts a slice of integers and re
 The input slice will always contain at least two integers.
 
 If the largest and the second largest number in the input slice are the same, the output slice should contain two copies of this number.
+
+## Question 2
+
+In Go, write a function named oddSumMaxPair that accepts a slice of integers and returns a slice containing the pair of integers that have the highest sum among all pairs with odd sums. The input slice will always contain at least two integers. The pairs should be considered as (numbers[i], numbers[j]) where j>i. If multiple pairs have the same highest odd sum, return the pair that occurs first.
+
+The returned slice should have the first element of the pair as the first element and the second element of the pair as the second element. The sum of the pair should be an odd number. Remember to handle the edge case where there are no pairs with an odd sum. In this case, the function should return a nil or empty slice.
