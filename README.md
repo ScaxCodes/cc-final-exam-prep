@@ -99,8 +99,36 @@ In Go, write a function named topAuthors that accepts a slice of Book structs an
 
 ```go
 type Book struct {
-    Title  string
-    Author string
-    Sales  int
+  Title  string
+  Author string
+  Sales  int
+}
+```
+
+## Question 4
+
+In Go, write a function named updateInventory that accepts a pointer to a Store struct and a Transaction struct. The function should update the inventory of the store based on the transaction details. If the quantity in the Transaction struct is positive, it means items are added to the inventory. If it's negative, items are removed from the inventory.
+
+If the transaction would cause the quantity of an item in the inventory to become negative, the function should not update the inventory and should return false. Otherwise, the function should update the inventory and return true.
+
+If an item does not exist in the store's inventory, the function should treat it as if its quantity is 0. So, for example, if a transaction tries to remove an item that does not exist in the inventory, the function should not update the inventory and should return false. Similarly, if a transaction adds an item that does not exist in the inventory, the function should add it to the inventory with the correct quantity and should return true.
+
+The function signature in Go is: func updateInventory(s \*Store, t Transaction) bool
+
+The Store struct is defined as follows:
+
+```go
+type Store struct {
+  Name      string
+  Inventory map[string]int // maps from item names to quantity
+}
+```
+
+The Transaction struct is defined as follows:
+
+```go
+type Transaction struct {
+  ItemName  string
+  Quantity  int // quantity can be positive or negative
 }
 ```
